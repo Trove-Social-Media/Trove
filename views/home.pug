@@ -1,0 +1,18 @@
+h1 Home Page 
+  
+form(method='POST' action='')
+    div.form-group
+        label(for='postcontent') Post Content:
+        input#username.form-control(type='text', placeholder='What\'s on your mind?' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
+    button.btn.btn-primary(type='submit') Submit
+    
+a(href='/catalog/profile') Go to profile page
+
+h1 Feed
+
+ul
+each element in post_list
+    li= element
+    
+br
+a(href='/catalog/userlist') Users List
