@@ -1,0 +1,14 @@
+h1 Profile Page
+  img(src='img_girl.jpg', width='60', height='60')
+  | &nbsp;#{user.name}
+p Username: #{user.username}
+p Followers: 0
+p Following: 2
+p Bio:&nbsp;
+p
+  textarea#bioName(style='margin: 0px; width: 500px; height: 200px;', cols='50', name='bioName', rows='4') This is my information. It is good information.
+ 
+h1 My Posts 
+ul
+each element in post_list
+    li= element
