@@ -53,5 +53,3 @@ exports.register_create_post =  [
         }
   }
 ];
-
-

@@ -35,7 +35,7 @@ exports.home_create_get = function(req, res) {
     res.send("User Profile GET");
 };
 
-// Handle login on POST
+//POST function to create a post
 exports.home_create_post = function(req, res) {
     //Store req post content
     var postcontent = req.body.postcontent;
@@ -68,6 +68,43 @@ exports.home_create_post = function(req, res) {
 //        }
 //      ); 
       console.log(post);
-    }
+    }    
+};
+
+// POST method to like a post
+exports.home_create_like = async function(req, res) {
+    //res.send(req.body.action);
+        var post;
+      await Post.findById(req.body.action, function(err,pro){
+          post=pro;
+          console.log("We found " + post);
+        });
     
+        Post.findOneAndUpdate({ _id: req.body.action }, { $inc: { likes: 1 } },function(err, response) {
+         if (err) {
+         callback(err);
+        } else {
+         res.send("Added a like to post that says" + post.content);
+        }
+        });
+};
+
+// POST method to create a comment
+exports.home_create_comment = async function(req, res) {
+    //res.send(req.body.action);
+        var post;
+      await Post.findById(req.body.action, function(err,pro){
+          post=pro;
+          console.log("We found " + post);
+        });
+    
+        var string = "Some comment"
+    
+        Post.findOneAndUpdate({ _id: req.body.action }, { $push: { comments: string } },function(err, response) {
+         if (err) {
+         callback(err);
+        } else {
+         res.send("Added a comment that says " + string);
+        }
+        });
 };

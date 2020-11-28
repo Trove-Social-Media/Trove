@@ -9,7 +9,7 @@ const fs = require('fs');
 //define storage location for images
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, 'public/uploads/');
+        cb(null, 'public/uploads');
     },
 
     // By default, multer removes file extensions so let's add them back
@@ -55,11 +55,23 @@ exports.registerimage_create_post = function(req, res) {
         }
 
         // Display uploaded image for user validation
+        var trimmedPath = req.file.path.slice(6);
         var filePath = req.file.path;
-        console.log(filePath);
+        console.log("The path is: " + trimmedPath);
         var newUser = req.session.newuser;
         console.log(newUser);
 //        newUser.img.data = fs.readFileSync(filePath);
 //        newUser.img.contentType = "image/png";
+        UserInfo.findOneAndUpdate({ _id: req.session.newuser._id }, {img: { 
+            //data: fs.readFileSync(path.join('/uploads/' + req.file.filename)), 
+            contentType: 'image/png',
+            path: trimmedPath
+        } },function(err, response) {
+         if (err) {
+         callback(err);
+        } else {
+
+        }
+        });
     });
 };
