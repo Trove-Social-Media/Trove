@@ -28,8 +28,14 @@ router.get('/home', home_controller.home);
 // GET request for home page.
 router.get('/home', home_controller.home_create_get);
 
-// POST request for home page.
-router.post('/home', home_controller.home_create_post);
+// POST request for home page create post.
+router.post('/home/create', home_controller.home_create_post);
+
+//POST request for home page like post.
+router.post('/home/like', home_controller.home_create_like);
+
+//POST request for home page create comment.
+router.post('/home/comment', home_controller.home_create_comment);
 
 
 // GET profile picture page.
