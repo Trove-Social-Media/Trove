@@ -1,0 +1,19 @@
+doctype html
+head
+  title Log-in Page
+// Page content
+.bodywrapper
+  form(action='/newPost' method='post')
+    div
+    h3
+      | Trove. by SYNERGY
+    h1.h1 Welcome back, Log-in.
+    form
+      .log-in
+        input.username(type='text' name='user1' placeholder='Username')
+        input.password(type='text' name='pass1' placeholder='Password')
+        p
+          | Need to 
+          a(href='url') create an account?
+      .form__submit-button
+        input(type='submit')
