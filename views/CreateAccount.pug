@@ -1,0 +1,32 @@
+doctype html
+head
+  title Create Account Page
+// Page content
+.bodywrapper
+  form(action='/newPost' method='post')
+    div
+    h3
+      | Welcome to Trove. by SYNERGY
+    h1.h1 Create an Account
+    form
+      .log-in
+        .line1
+          label First Name:
+          input.line2(type='text' name='first' placeholder='John')
+        .line1
+          label Last name:
+          input.line2(type='text' name='last' placeholder='Doe')
+        .line1
+          label Username:
+          input.line2(type='text' name='user' placeholder='JohnDoe1')
+        .line1
+          label Password:
+          input.line2(type='text' name='pass' placeholder='*****')
+        .line1
+          label Confirm Password:
+          input.line2(type='text' name='pass2' placeholder='*****')
+        p
+          | Already have an account? 
+          a(href='url') Log-in.
+      .form__submit-button
+        input(type='submit')

@@ -1,0 +1,24 @@
+doctype html
+head
+  title Post Upload Page
+// Side navigation
+.sidenav
+  // try to get  png symbol here
+  a(href='#') Feed
+  a(href='#') My Profile
+  a(href='#') Make a Post
+  a(href='#') Search
+// Page content
+.bodywrapper
+  form(action='/newPost' method='post')
+    div
+    h3
+      | Welcome, Name
+    h1.h1 Make a Post
+    .labelwrap
+      input.postTitle(type='text' name='postTitle' placeholder='Post Title')
+      p
+      // Add a Spotify streamable API link here
+      textarea.postBody(type='text' name='postBody' placeholder='Text content goes here.')
+    .form__submit-button
+      input(type='submit')
