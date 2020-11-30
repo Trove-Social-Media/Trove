@@ -31,6 +31,12 @@ router.get('/home', home_controller.home_create_get);
 // POST request for home page create post.
 router.post('/home/create', home_controller.home_create_post);
 
+// POST request for home page create audio post.
+router.post('/home/create/audio', home_controller.home_create_audio_post);
+
+// POST request for home page create audio post text.
+router.post('/home/create/audio/text', home_controller.home_create_audio_text);
+
 //POST request for home page like post.
 router.post('/home/like', home_controller.home_create_like);
 
