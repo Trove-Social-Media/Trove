@@ -1,11 +1,33 @@
-form(method='POST' action='/catalog/home/create/audio/text')
+doctype html
+head
+  title User Profile Design
+  link(rel='stylesheet' href='/stylesheets/createPost.css')
+  script(src="/javascripts/createPostScript.js")
+  script(src='https://kit.fontawesome.com/233056fb74.js' crossorigin='anonymous')
+// Side navigation
+.sidenav
+  // try to get  png symbol here
+  a(href='/catalog/home') Feed
+  a(href='/catalog/profile') My Profile
+  a(href='PostUpload.pug') Make a Post
+  a(href='Log-out.pug') Log out
+
+.profile(style = 'height: 700px')
+    .title
+    h1
+    | Create a post
+    // Tab links
+    form(method='POST' action='/catalog/home/create/audio/text')
         p The file you shared is #{name}
         p Preview:
         audio(src= path, controls type='audio/mpeg')
         br
         br
         label(for='postcontent') Post Content:
-        input#username.form-control(type='text', placeholder='Share your thoughts or some music!' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
+        br
+        br
+        //input#username.form-control(type='text', placeholder='Share your thoughts or some music!' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
+        textarea.postBody(type='text' name='postcontent' placeholder='Share your thoughts')
         br
         br
         input(type='submit' name='btn_upload_profile_pic' value='Upload')
