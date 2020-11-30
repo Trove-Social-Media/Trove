@@ -5,18 +5,7 @@ var Post = require('../models/post');
 
 // Display login page form on GET.
 exports.userlist = async function(req, res) {
-    //res.send("User list page")
-//    UserInfo.find({})
-//    .populate('following').exec((err, userinfos) => {
-//      console.log("Following users: " + userinfos.following);
-//    })
-      //console.log(req.session.user.following);
-//    UserInfo.findOne({ username: 'someusername'},(err,res) => {
-//        console.log("Check if populated" + res.populated('following'));
-//    });
-    
     console.log(req.body);
- 
     UserInfo.find({},'')
     .populate('friends')
     .exec(function (err, list_users) {
@@ -33,21 +22,7 @@ exports.userlist_create_get = function(req, res) {
 };
 
 // Handle userlist on POST
-exports.userlist_create_post = async function(req, res) {
-    //res.send("User List Page POST function");
-    
-       //Create a new user object with escaped and trimmed data.
-//    var obj= new UserInfo(
-//      { username: 'uname',
-//        password: 'pword'}
-//    );
-//      obj.save(function (err) {
-//               if (err) { return next(err); }
-//               // state that the user has been sucessfully created
-//               
-//                console.log("Successfully saved object")
-//             });  
-//    
+exports.userlist_create_post = async function(req, res) {   
     //Add user corresponding to button pressed to logged in user friends list
     UserInfo.updateOne(
     { username: req.body.action}, 
@@ -64,23 +39,7 @@ exports.userlist_create_post = async function(req, res) {
     
     console.log("The username were looking for is: " + req.body.action);
     var query;
-//UserInfo.findOne({username: req.body.action}, function(user){
-//  query = user;
-//    console.log("Query user is: " + user);
-//});
-//    //Add logged in user to other user's friends list
-//     UserInfo.updateOne(
-//    { username: req.session.user}, 
-//    { $push: { friends: query }},
-//    function(err, result) {
-//          if (err) {
-//            res.send(err);
-//          } else {
-//            //res.send("Success");
-//              console.log("Success 2")
-//          }
-//        }
-//    );
+
     var user;
       await UserInfo.findOne({username: req.body.action}, function(err,pro){
           user=pro;
@@ -102,7 +61,7 @@ exports.userlist_create_post = async function(req, res) {
      
     
     //TEST CODE
-//    res.send(`You want to follow someone with the username ${req.body.action}`);
+    res.send(`You followed @${req.body.action}`);
 //    console.log(req.body.action);
     
  
