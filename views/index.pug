@@ -1,21 +1,25 @@
-extends layout
-
-block content 
-    h1(style='text-align: center;')
-      span(style='color: #333399;') TROVE.
-    p(style='text-align: center;')
-      span(style='color: #333399;') Login:
-    form(method='POST' action='' style='text-align: center;')
-        div.form-group
-          label(for='username') Username:
-          input#username.form-control(type='text', placeholder='Username' name='username' value=(undefined===userinfo ? '' : userinfo.username))
-          br
-          br
-          label(for='password') Password:
-          input#password.form-control(type='text', placeholder='Password' name='password' value=(undefined===userinfo ? '' : userinfo.password))
-        br  
-        button.btn.btn-primary(type='submit') Submit
-    a(style='text-align: center;', href='/catalog/register') Don't have an account?
-    p(style='text-align: center;') Try Logging-in
-    // Insert Hyperlink to main log-in page
-    
+head
+link(rel='stylesheet', href='/stylesheets/LogIn.css')
+title Log-in Page
+// Page content
+.bodywrapper
+  form(method='POST' action='' style='text-align: center;')
+    div
+    h3
+      | Trove. by SYNERGY
+    h1.h1 Welcome back, Log-in.
+    form
+      .log-in
+        
+            div.form-group
+              label(for='username') Username:
+              input#username.form-control(type='text', placeholder='Username' name='username' value=(undefined===userinfo ? '' : userinfo.username))
+              br
+              br
+              label(for='password') Password:
+              input#password.form-control(type='text', placeholder='Password' name='password' value=(undefined===userinfo ? '' : userinfo.password))
+              br  
+              p
+                | Need to 
+                a(href='/catalog/register') create an account?
+            button.btn.btn-primary(type='submit') Submit 
