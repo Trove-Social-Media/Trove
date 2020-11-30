@@ -8,6 +8,8 @@ var login_controller = require('../controllers/loginController');
 var profile_controller = require('../controllers/profileController');
 var home_controller = require('../controllers/homeController');
 var userlist_controller = require('../controllers/userlistController');
+var createPost_controller = require('../controllers/createPostController');
+var comment_controller = require('../controllers/commentController');
 
 // GET catalog home page.
 router.get('/', login_controller.index);
@@ -22,20 +24,33 @@ router.get('/register', register_controller.register_create_get);
 router.post('/register', register_controller.register_create_post);
 
 
+// GET request for create post page.
+router.get('/home/create', createPost_controller.create_post_get);
+
+// POST request for create post page.
+router.post('/home/create', createPost_controller.create_post);
+
+// POST request for create post page audio file.
+router.post('/home/create/audio', createPost_controller.create_audio_post);
+
+// POST request for create post page audio file text.
+router.post('/home/create/audio/text', createPost_controller.create_audio_text);
+
+
 // GET home page.
 router.get('/home', home_controller.home);
 
 // GET request for home page.
 router.get('/home', home_controller.home_create_get);
 
-// POST request for home page create post.
-router.post('/home/create', home_controller.home_create_post);
-
-// POST request for home page create audio post.
-router.post('/home/create/audio', home_controller.home_create_audio_post);
-
-// POST request for home page create audio post text.
-router.post('/home/create/audio/text', home_controller.home_create_audio_text);
+//// POST request for home page create post.
+//router.post('/home/create', home_controller.home_create_post);
+//
+//// POST request for home page create audio post.
+//router.post('/home/create/audio', home_controller.home_create_audio_post);
+//
+//// POST request for home page create audio post text.
+//router.post('/home/create/audio/text', home_controller.home_create_audio_text);
 
 //POST request for home page like post.
 router.post('/home/like', home_controller.home_create_like);
@@ -80,6 +95,13 @@ router.get('/profile/create', profile_controller.profile_create_get);
 
 // POST request for User Profile page
 router.post('/profile/create', profile_controller.profile_create_post);
+
+
+// GET comment page.
+router.get('/comment', comment_controller.comment);
+
+// POST request for creating comment
+router.post('/comment/create', comment_controller.create_comment);
 
 
 
