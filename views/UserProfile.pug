@@ -2,27 +2,80 @@ doctype html
 head
   title User Profile Design
   link(rel='stylesheet' href='style.css')
+  script(src='https://kit.fontawesome.com/233056fb74.js' crossorigin='anonymous')
 // Side navigation
 .sidenav
   // try to get  png symbol here
   a(href='#') Feed
-  a(href='#') My Profile
-  a(href='#') Make a Post
-  a(href='#') Search
+  a(href='UserProfile.pug') My Profile
+  a(href='PostUpload.pug') Make a Post
+  a(href='Log-out.pug') Log out
 .profile
   .image-container
-    img(src='user.jpeg' style='width: 100%')
+    img(src='user.jpeg' style='width: 150px' height='150px')
     .title
       h2
         | Matthew Duran
   .main
     p
-      b I am a:
+      i.fas.fa-user
       |  Musician
     p
-      b Location:
+      i.fas.fa-map-pin
       |  Freeport, NY
     p
-      b Contact:
+      i.fas.fa-envelope
       |  mattduran59@gmail.com
     hr
+    // Start div for posts
+    // post 1
+    .content
+      .header
+        .detail
+          p.name Matthew Duran
+        .content
+          | Man I&apos;ve just really been vibing recently.
+        .footer
+          .like
+            button.like-button
+              i.fas.fa-heart
+              |  13
+          .comment
+            button.comment-button
+              i.fas.fa-comment
+              |  4
+    // post 2
+    .content
+      .header
+        .detail
+          hr
+          p.name Matthew Duran
+        .content
+          | Working on a new project!
+        .footer
+          .like
+            button.like-button
+              i.fas.fa-heart
+              |  3
+          .comment
+            button.comment-button
+              i.fas.fa-comment
+              |  6
+          hr
+    // post 3
+    .content
+      .header
+        hr
+        .detail
+          p.name Matthew Duran
+        .content
+          | Kinda new here.... anyone else?
+        .footer
+          .like
+            button.like-button
+              i.fas.fa-heart
+              |  5
+          .comment
+            button.comment-button
+              i.fas.fa-comment
+              |  2
