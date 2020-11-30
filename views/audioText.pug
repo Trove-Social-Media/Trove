@@ -1,0 +1,11 @@
+form(method='POST' action='/catalog/home/create/audio/text')
+        p The file you shared is #{name}
+        p Preview:
+        audio(src= path, controls type='audio/mpeg')
+        br
+        br
+        label(for='postcontent') Post Content:
+        input#username.form-control(type='text', placeholder='Share your thoughts or some music!' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
+        br
+        br
+        input(type='submit' name='btn_upload_profile_pic' value='Upload')

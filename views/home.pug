@@ -1,11 +1,46 @@
 h1 Home Page 
-  
-form(method='POST' action='/catalog/home/create')
-    div.form-group
+link(rel='stylesheet', href='/stylesheets/style.css')
+script(src="/javascripts/createPostScript.js")
+//form(method='POST' action='/catalog/home/create')
+form(method='POST' action='/catalog/home/create' enctype='multipart/form-data')
         label(for='postcontent') Post Content:
-        input#username.form-control(type='text', placeholder='What\'s on your mind?' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
-    button.btn.btn-primary(type='submit') Submit
-    
+        input#username.form-control(type='text', placeholder='Share your thoughts or some music!' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
+        br
+        br
+        audio(src='/uploads/example.mp3', controls type='audio/mpeg')
+        br
+        label Add a song:
+        div
+        input(type='file' name='profile_pic')    
+        br
+        br
+        input(type='submit' name='btn_upload_profile_pic' value='Upload')
+        //button.btn.btn-primary(type='submit' name='btn_upload_profile_pic' value='Upload') Submit
+h1 TABS
+// Tab links
+.tab
+  button.tablinks(onclick="openCity(event, 'London')" id="defaultOpen") Regular Post
+  button.tablinks(onclick="openCity(event, 'Paris')") Audio Upload
+// Tab content
+#London.tabcontent
+  form(method='POST' action='/catalog/home/create')
+        label(for='postcontent') Post Content:
+        input#username.form-control(type='text', placeholder='Share your thoughts or some music!' name='postcontent' value=(undefined===userinfo ? '' : userinfo.username))
+        br
+        br
+        input(type='submit' name='btn_upload_profile_pic' value='Upload')
+#Paris.tabcontent
+  form(method='POST' action='/catalog/home/create/audio' enctype='multipart/form-data')
+        label Upload an audio file:
+        div
+        input(type='file' name='profile_pic')    
+        br
+        br
+        input(type='submit' name='btn_upload_profile_pic' value='Upload')
+
+
+
+
 a(href='/catalog/profile') Go to profile page
 
 h1 Feed
