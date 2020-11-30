@@ -1,6 +1,6 @@
 //const { body,validationResult } = require("express-validator");
 const multer = require('multer');
-const helpers = require('../helpers');
+const helpers2 = require('../helpers2');
 var UserInfo = require('../models/userinfo');
 const path = require('path');
 const fs = require('fs');
@@ -35,7 +35,7 @@ exports.registerimage_create_get = function(req, res) {
 exports.registerimage_create_post = function(req, res) {
     //res.send("Register Image POST");
     // 'profile_pic' is the name of our file input field in the HTML form
-    let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('profile_pic');
+    let upload = multer({ storage: storage, fileFilter: helpers2.imageFilter }).single('profile_pic');
 
     upload(req, res, function(err) {
         // req.file contains information of uploaded file
@@ -70,7 +70,7 @@ exports.registerimage_create_post = function(req, res) {
          if (err) {
          callback(err);
         } else {
-
+            res.send("Account created");
         }
         });
     });

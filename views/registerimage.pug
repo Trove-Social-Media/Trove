@@ -1,8 +1,30 @@
-form(method='POST' action='' enctype='multipart/form-data')
-        div
-            label Select your profile picture:
-            input(type='file' name='profile_pic')
-        div
-            input(type='submit' name='btn_upload_profile_pic' value='Upload')
-        
-        img(src='/uploads/profile_pic-1605893513865.JPG', width='60', height='60')
+head
+link(rel='stylesheet', href='/stylesheets/register.css')
+title Create Account Page
+// Page content
+.bodywrapper
+  form(method='POST' action='' enctype='multipart/form-data')
+    div
+    h3
+      | Welcome to Trove. by SYNERGY
+    h1.h1 Add a profile picture
+    form
+      .log-in
+        .line1
+          label Select your profile picture:
+          input.line2(type='file' name='profile_pic')
+        //.line1
+          label Last name:
+          input#lastname.form-control(type='text', placeholder='Last name' name='lastname' value=(undefined===userinfo ? '' : userinfo.lastname))
+        //.line1
+          label Username:
+          input#username.form-control(type='text', placeholder='Username' name='username' value=(undefined===userinfo ? '' : userinfo.username))
+          //input.line2(type='text' name='user' placeholder='JohnDoe1')
+        //.line1
+          label Password:
+          input#password.form-control(type='text', placeholder='Password' name='password' value=(undefined===userinfo ? '' : userinfo.password))
+        //p
+          | Already have an account? 
+          a(href='url') Log-in.
+      .form__submit-button
+        input(type='submit')

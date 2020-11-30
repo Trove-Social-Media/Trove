@@ -21,6 +21,8 @@ exports.register_create_post =  [
 //  // Validate and santise the name field.
   body('username', 'Username required').trim().isLength({ min: 1 }).escape(),
   body('password', 'Password required').trim().isLength({ min: 1 }).escape(),
+  body('firstname', 'First name required').trim().isLength({ min: 1 }).escape(),
+  body('lastname', 'Last name required').trim().isLength({ min: 1 }).escape(),
 
   // Process request after validation and sanitization.
   (req, res, next) => {
@@ -41,7 +43,10 @@ exports.register_create_post =  [
        //Create a new user object with escaped and trimmed data.
     var userinfo = new UserInfo(
       { username: req.body.username,
-        password: req.body.password}
+        password: req.body.password,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname
+      }
     );
       userinfo.save(function (err) {
                if (err) { return next(err); }

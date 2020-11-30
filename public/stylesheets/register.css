@@ -1,0 +1,51 @@
+@font-face {
+  font-family: scriptoniteimport;
+  src:url("scriptonite.ttf");
+}
+
+body {
+  text-align: center;
+  font-size: 18px;
+  background-color: #6d87a3;
+  font-family: Verdana;
+}
+
+.bodywrapper {
+  width: 650px;
+  margin: auto;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+}
+
+.line1 {
+
+  text-align: left;
+  margin: 10px;
+}
+
+.line2 {
+   
+  border-radius: 5px;
+  border: 2px solid #3b4f63;
+  display: inline-block;
+  padding: 4px;
+  margin: 10px;
+ 
+}
+
+#username, #password,#firstname,#lastname {
+   
+  border-radius: 5px;
+  border: 2px solid #3b4f63;
+  display: inline-block;
+  padding: 4px;
+  margin: 10px;
+ 
+}
+
+.password {
+  border-radius: 5px;
+  border: 2px solid #3b4f63;
+}
+

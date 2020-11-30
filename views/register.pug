@@ -1,31 +1,33 @@
-extends layout
-
-block content 
-    h1 #{title}
-    h1(style='text-align: center;')
-      span(style='color: #333399;') TROVE.
-    p(style='text-align: center;')
-      span(style='color: #333399;') Create an Account:
-    p(style='text-align: center;')
-      label(for='user') Create Username:
-      textarea#user(cols='20 name=', rows='1')   Username  
-    p(style='text-align: center;')
-      label(for='pass') Create Password:
-      textarea#user(cols='20 name=', rows='1')   Password  
-    p(style='text-align: center;')
-      button(type='button') Create Account
-    p(style='text-align: center;') Already have an account?
-    p(style='text-align: center;') Try Logging-in
-    // Insert Hyperlink to main log-in page
-    form(method='POST' action='')
-        div.form-group
-          label(for='username') Username:
+head
+link(rel='stylesheet', href='/stylesheets/register.css')
+title Create Account Page
+// Page content
+.bodywrapper
+  form(method='POST' action='')
+    div
+    h3
+      | Welcome to Trove. by SYNERGY
+    h1.h1 Create an Account
+    form
+      .log-in
+        .line1
+          label First Name:
+          input#firstname.form-control(type='text', placeholder='First name' name='firstname' value=(undefined===userinfo ? '' : userinfo.firstname))
+        .line1
+          label Last name:
+          input#lastname.form-control(type='text', placeholder='Last name' name='lastname' value=(undefined===userinfo ? '' : userinfo.lastname))
+        .line1
+          label Username:
           input#username.form-control(type='text', placeholder='Username' name='username' value=(undefined===userinfo ? '' : userinfo.username))
-          label(for='password') Password:
+          //input.line2(type='text' name='user' placeholder='JohnDoe1')
+        .line1
+          label Password:
           input#password.form-control(type='text', placeholder='Password' name='password' value=(undefined===userinfo ? '' : userinfo.password))
-        button.btn.btn-primary(type='submit') Submit
-        br
-        br
-    
-    
-
+        //.line1
+          label Confirm Password:
+          input.line2(type='text' name='pass2' placeholder='*****')
+        p
+          | Already have an account? 
+          a(href='url') Log-in.
+      .form__submit-button
+        input(type='submit')

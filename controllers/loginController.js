@@ -35,8 +35,7 @@ exports.login_create_post = function(req, res) {
         //console.log(user.following);
         
         //else we have successfully found a user
-        //return res.send("Success");
-        //console.log(user.password);
+
         req.session.user = user;
         req.session.user.id = user._id;
            

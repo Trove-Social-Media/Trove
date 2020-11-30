@@ -7,7 +7,11 @@ var PostSchema = new Schema(
     content: {type: String, required: true},
     user: {type: Schema.Types.ObjectId, ref: 'UserInfo'},
     likes: {type: Number},
-    comments: [{type: String}],
+    comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
+    song: 
+    { 
+        path: String
+    }, 
   }
 );
 
