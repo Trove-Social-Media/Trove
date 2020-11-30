@@ -9,6 +9,12 @@ var UserInfoSchema = new Schema(
     firstname: {type: String, required: false},
     lastname: {type: String, required: false},
     friends: [{type: Schema.Types.ObjectId, ref: 'UserInfo'}],
+    img: 
+    { 
+        //data: Buffer, 
+        contentType: String,
+        path: String
+    } 
   }
 );
 
