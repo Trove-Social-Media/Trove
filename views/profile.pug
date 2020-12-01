@@ -44,4 +44,7 @@ head
               .comment
                 button.comment-button
                   i.fas.fa-comment
-                  |  #{element.comments.length}
+                  if(element.comments!=null)
+                    |  #{element.comments.length}
+                  else
+                    |  0
