@@ -1,0 +1,21 @@
+doctype html
+head
+  title Log-in Page
+// Page content
+.bodywrapper
+  form(action='/newPost' method='post')
+    div
+    h3
+      | Trove. by SYNERGY
+    h1.h1 Log out?
+    script(type='text/javascript').
+      document.getElementById("yesButton").onclick = function() {
+      //this doesn't correctly redirect to the login page, not sure what to put
+      location.href = "Log-in.html"
+      };
+    script.
+      function goBack() {
+      window.history.back();
+      }
+    button#yesButton(type='button') Yes
+    button#noButton(onclick='goBack()') No

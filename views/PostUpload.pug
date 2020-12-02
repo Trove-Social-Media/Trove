@@ -5,9 +5,9 @@ head
 .sidenav
   // try to get  png symbol here
   a(href='#') Feed
-  a(href='#') My Profile
-  a(href='#') Make a Post
-  a(href='#') Search
+  a(href='UserProfile.pug') My Profile
+  a(href='PostUpload.pug') Make a Post
+  a(href='Log-out.pug') Log out
 // Page content
 .bodywrapper
   form(action='/newPost' method='post')
@@ -16,7 +16,6 @@ head
       | Welcome, Name
     h1.h1 Make a Post
     .labelwrap
-      input.postTitle(type='text' name='postTitle' placeholder='Post Title')
       p
       // Add a Spotify streamable API link here
       textarea.postBody(type='text' name='postBody' placeholder='Text content goes here.')
