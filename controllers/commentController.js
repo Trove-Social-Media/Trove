@@ -55,7 +55,8 @@ exports.create_comment = function(req, res) {
          if (err) {
          callback(err);
         } else {
-         res.send("Added a comment that says " + req.body.commenttext);
+         //res.send("Added a comment that says " + req.body.commenttext);
+            res.render('commentadded');
         }
         });
 };

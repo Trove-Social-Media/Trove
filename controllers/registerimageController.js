@@ -70,7 +70,8 @@ exports.registerimage_create_post = function(req, res) {
          if (err) {
          callback(err);
         } else {
-            res.send("Account created");
+            //res.send("Account created");
+            res.render('registermessage');
         }
         });
     });
