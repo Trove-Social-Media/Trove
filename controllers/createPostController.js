@@ -61,7 +61,8 @@ exports.create_post = function(req, res) {
                if (err) { return next(err); }
                // state that the user has been sucessfully created
                
-                res.send("Success");
+                //res.send("Success");
+          res.render('postcreated');
              }); 
 
       console.log(post);
@@ -119,7 +120,8 @@ exports.create_audio_text = function(req, res) {
                if (err) { return next(err); }
                // state that the user has been sucessfully created
                
-                res.send("Success");
+                //res.send("Success");
+                res.render('postcreated');
              }); 
 
       console.log(post);
