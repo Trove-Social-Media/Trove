@@ -61,7 +61,8 @@ exports.userlist_create_post = async function(req, res) {
      
     
     //TEST CODE
-    res.send(`You followed @${req.body.action}`);
+    //res.send(`You followed @${req.body.action}`);
+    res.render('followeduser');
 //    console.log(req.body.action);
     
  
