@@ -64,7 +64,8 @@ exports.home_create_like = async function(req, res) {
          if (err) {
          callback(err);
         } else {
-         res.send("Added a like to post that says" + post.content);
+         //res.send("Added a like to post that says" + post.content);
+            res.render('likepostmessage');
         }
         });
 };
