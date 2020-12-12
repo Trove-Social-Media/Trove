@@ -34,7 +34,7 @@ body {
  
 }
 
-#username, #password,#firstname,#lastname {
+#username, #password,#firstname,#lastname,#email,#location {
    
   border-radius: 5px;
   border: 2px solid #3b4f63;

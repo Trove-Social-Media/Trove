@@ -23,6 +23,8 @@ exports.register_create_post =  [
   body('password', 'Password required').trim().isLength({ min: 1 }).escape(),
   body('firstname', 'First name required').trim().isLength({ min: 1 }).escape(),
   body('lastname', 'Last name required').trim().isLength({ min: 1 }).escape(),
+  body('email', 'Email required').trim().isLength({ min: 1 }).escape(),
+  body('location', 'Location required').trim().isLength({ min: 1 }).escape(),
 
   // Process request after validation and sanitization.
   (req, res, next) => {
@@ -44,7 +46,9 @@ exports.register_create_post =  [
     var userinfo = new UserInfo(
       { username: req.body.username,
         password: req.body.password,
+        email: req.body.email,
         firstname: req.body.firstname,
+        location: req.body.location,
         lastname: req.body.lastname
       }
     );
