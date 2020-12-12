@@ -8,6 +8,8 @@ var UserInfoSchema = new Schema(
     password: {type: String, required: true},
     firstname: {type: String, required: false},
     lastname: {type: String, required: false},
+    email: {type: String, required: false},
+    location: {type: String, required: false},
     friends: [{type: Schema.Types.ObjectId, ref: 'UserInfo'}],
     img: 
     { 
