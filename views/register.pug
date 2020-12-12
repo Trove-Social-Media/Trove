@@ -11,6 +11,9 @@ title Create Account Page
     form
       .log-in
         .line1
+          label Email:
+          input#email.form-control(type='text', placeholder='Email' name='email' value=(undefined===userinfo ? '' : userinfo.email))
+        .line1
           label First Name:
           input#firstname.form-control(type='text', placeholder='First name' name='firstname' value=(undefined===userinfo ? '' : userinfo.firstname))
         .line1
@@ -19,6 +22,9 @@ title Create Account Page
         .line1
           label Username:
           input#username.form-control(type='text', placeholder='Username' name='username' value=(undefined===userinfo ? '' : userinfo.username))
+        .line1
+          label Location:
+          input#location.form-control(type='text', placeholder='City, State' name='location' value=(undefined===userinfo ? '' : userinfo.location))
           //input.line2(type='text' name='user' placeholder='JohnDoe1')
         .line1
           label Password:
