@@ -29,22 +29,51 @@ head
       |  something@gmail.com
     hr
     // Start div for posts
+    
+    
+    
+    
     each element in post_list
-        .content
-          .header
-            .detail
-              p.name #{user.name}
+        if(element.song.path == null)
             .content
-              | #{element.content}
-            .footer
-              .like
-                button.like-button
-                  i.fas.fa-heart
-                  |  #{element.likes}
-              .comment
-                button.comment-button
-                  i.fas.fa-comment
-                  if(element.comments!=null)
-                    |  #{element.comments.length}
-                  else
-                    |  0
+              .header
+                .detail
+                  p.name #{user.name}
+                .content
+                  | #{element.content}
+                .footer
+                  .like
+                    button.like-button
+                      i.fas.fa-heart
+                      |  #{element.likes}
+                  .comment
+                    button.comment-button
+                      i.fas.fa-comment
+                      if(element.comments!=null)
+                        |  #{element.comments.length}
+                      else
+                        |  0
+        else          
+            .content
+              .header
+                .detail
+                  p.name #{user.name}
+                .content
+                  | #{element.content}
+                audio(src= element.song.path, controls type='audio/mpeg')
+                .footer
+                  .like
+                    button.like-button
+                      i.fas.fa-heart
+                      |  #{element.likes}
+                  .comment
+                    button.comment-button
+                      i.fas.fa-comment
+                      if(element.comments!=null)
+                        |  #{element.comments.length}
+                      else
+                        |  0
+                    
+                    
+                    
+                  

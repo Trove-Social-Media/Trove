@@ -52,7 +52,7 @@ else
                       p.name @#{element.user.username}
                     .content
                       | #{element.content}
-                    audio(src='/uploads/example.mp3', controls type='audio/mpeg')
+                    audio(src=element.song.path, controls type='audio/mpeg')
                     .footer
                         .like
                             form(method='POST' action='/catalog/home/like')
@@ -64,3 +64,5 @@ else
                                     button.btn.btn-primary(type='submit' value=element._id name="action")
                                         i.fas.fa-comment
                                         |  #{element.comments.length}
+                
+                
