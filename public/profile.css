@@ -34,16 +34,33 @@ body {
   font-size: 14px;
 }
  .content {
-  display: flex;
+ 
   flex-direction: column;
   padding: 5px;
 }
 
- .header {
+ .post-card .header {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
- .detail {
+.name {
+  display: flex;
+}
+
+.post-card .profile-pic {
+  display: flex;
+  background-image: url('#'); 
+  background-position: 50%;
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #8797e8;
+}
+
+ .content .detail {
   margin-left: 5px;
 }
 
