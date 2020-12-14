@@ -10,6 +10,7 @@ var home_controller = require('../controllers/homeController');
 var userlist_controller = require('../controllers/userlistController');
 var createPost_controller = require('../controllers/createPostController');
 var comment_controller = require('../controllers/commentController');
+var logout_controller = require('../controllers/logOutController');
 
 // GET catalog home page.
 router.get('/', login_controller.index);
