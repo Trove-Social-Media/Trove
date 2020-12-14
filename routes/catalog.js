@@ -14,6 +14,9 @@ var comment_controller = require('../controllers/commentController');
 // GET catalog home page.
 router.get('/', login_controller.index);
 
+// GET log out page.
+router.get('/logout', logout_controller.logout);
+
 // GET register page.
 router.get('/register', register_controller.register);
 
