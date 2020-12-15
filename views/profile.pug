@@ -23,10 +23,10 @@ head
       |  Musician
     p
       i.fas.fa-map-pin
-      |  Long Island, NY
+      |  #{user.location}
     p
       i.fas.fa-envelope
-      |  something@gmail.com
+      |  #{user.email}
     hr
     // Start div for posts
     
@@ -35,12 +35,15 @@ head
     
     each element in post_list
         if(element.song.path == null)
-            .content
+            .post-card
               .header
                 .detail
-                  p.name #{user.name}
+                .profile-pic
+                    img(src= user.img.path)
+                h4.name
+                    | #{user.name}
                 .content
-                  | #{element.content}
+                    | #{element.content}
                 .footer
                   .like
                     button.like-button
@@ -53,14 +56,18 @@ head
                         |  #{element.comments.length}
                       else
                         |  0
-        else          
-            .content
+            hr
+        else    
+            .post-card
               .header
                 .detail
-                  p.name #{user.name}
+                .profile-pic
+                    img(src= user.img.path)
+                h4.name
+                    | #{user.name}
                 .content
-                  | #{element.content}
-                audio(src= element.song.path, controls type='audio/mpeg')
+                    | #{element.content}
+                audio(src= element.song.path, controls type='audio/mpeg')    
                 .footer
                   .like
                     button.like-button
@@ -73,7 +80,6 @@ head
                         |  #{element.comments.length}
                       else
                         |  0
-                    
-                    
-                    
-                  
+            hr    
+        
+        
