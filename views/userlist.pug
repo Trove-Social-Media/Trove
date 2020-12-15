@@ -26,16 +26,22 @@ else
       .main
 
         hr
-        // Start div for posts
+        // Start div for user list
         each element in user_list
-            .content
-              .header
-                .detail
-                  p.name #{element.name}
-                  p.name @#{element.username}
-                  .footer
-                    .like
-                        form(method='POST' action='' style='text-align: center;')
-                            button.btn.btn-primary(type='submit' value=element.username name="action")
-                                i.fas.fa-user
-                                |  Follow
+            .post-card
+                .content
+                  .header
+                    .detail
+                      .profile-pic
+                        img(src= element.img.path)    
+                      p.name #{element.name}
+                      p.name @#{element.username}
+                      .footer
+                        .like
+                            form(method='POST' action='' style='text-align: center;')
+                                button.btn.btn-primary(type='submit' value=element.username name="action")
+                                    i.fas.fa-user
+                                    |  Follow
+                        
+                  
+                  
