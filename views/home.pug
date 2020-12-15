@@ -28,41 +28,49 @@ else
         // Start div for posts
         each element in post_list
             if(element.song.path == null)
-                .content
+                .post-card
                   .header
                     .detail
-                      p.name @#{element.user.username}
+                    .profile-pic
+                        img(src= element.user.img.path)
+                    h4.name
+                        | #{element.user.name}
                     .content
-                      | #{element.content}
+                        | #{element.content}
                     .footer
-                        .like
-                            form(method='POST' action='/catalog/home/like')
-                                button.btn.btn-primary(type='submit' value=element._id name="action") 
-                                    i.fas.fa-heart
-                                    |  #{element.likes}
-                        .comment
-                            form(method='POST' action='/catalog/home/comment')
-                                    button.btn.btn-primary(type='submit' value=element._id name="action")
-                                        i.fas.fa-comment
-                                        |  #{element.comments.length}
-            else                       
-                .content
+                      .like
+                        form(method='POST' action='/catalog/home/like')
+                            button.btn.btn-primary(type='submit' value=element._id name="action") 
+                                i.fas.fa-heart
+                                |  #{element.likes}
+                      .comment
+                        form(method='POST' action='/catalog/home/comment')
+                                button.btn.btn-primary(type='submit' value=element._id name="action")
+                                    i.fas.fa-comment
+                                    |  #{element.comments.length}
+                hr
+            else    
+                .post-card
                   .header
                     .detail
-                      p.name @#{element.user.username}
+                    .profile-pic
+                        img(src= element.user.img.path)
+                    h4.name
+                        | #{element.user.name}
                     .content
-                      | #{element.content}
-                    audio(src=element.song.path, controls type='audio/mpeg')
+                        | #{element.content}
+                    audio(src= element.song.path, controls type='audio/mpeg')    
                     .footer
-                        .like
-                            form(method='POST' action='/catalog/home/like')
-                                button.btn.btn-primary(type='submit' value=element._id name="action") 
-                                    i.fas.fa-heart
-                                    |  #{element.likes}
-                        .comment
-                            form(method='POST' action='/catalog/home/comment')
-                                    button.btn.btn-primary(type='submit' value=element._id name="action")
-                                        i.fas.fa-comment
-                                        |  #{element.comments.length}
-                
-                
+                      .like
+                        form(method='POST' action='/catalog/home/like')
+                            button.btn.btn-primary(type='submit' value=element._id name="action") 
+                                i.fas.fa-heart
+                                |  #{element.likes}
+                      .comment
+                        form(method='POST' action='/catalog/home/comment')
+                                button.btn.btn-primary(type='submit' value=element._id name="action")
+                                    i.fas.fa-comment
+                                    |  #{element.comments.length}
+                hr    
+
+
